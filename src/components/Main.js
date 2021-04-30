@@ -1,5 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 export default function main() {
     return (
@@ -13,20 +15,30 @@ export default function main() {
                             <p className='hero-sub'><i>"<b>together</b> we can take
                             our money <br />from saplings to well rooted trees"</i>
                             </p>
-                            <p><a href="#" className="btn btn-warning btn-large">SIGN UP »</a></p>
+                            <p><Link to="/register" className="btn btn-warning btn-large">SIGN UP »</Link></p>
                         </div>
                     </div>
+
+                    {/* <div className='row'>
+                        <div className='col'>
+                            <div className="arrow">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div> */}
                 </div>
             </section>
             {/* ------------------------------------------------------ */}
             <div className="container2">
-                <div className="row">
+                <div className="row bg-light">
                     <div className="row mt-5 mb-5 ">
                         <div className="col-md-6 col-sm-12">
                             <img src="./investing.png" className="card-img-top card-img-top img-fluid mt-25" alt="investing" />
                         </div>
                         <div className="col-md-6 col-sm-12 mt-5 pt-5 mb-5">
-                         
+
                             <h1><i>Anything is possible...</i></h1>
                             <br />
                             <h4>that is with careful planning, and the support of a huge community of people
@@ -34,7 +46,7 @@ export default function main() {
                             payment on your dream home, or even that purse you've been eyeing. With <b><i>Sapling </i></b>
                              you can create your savings goals, update them, and share them with a community who will
                             only support you in achieving it.
-                 
+
                          <i><b>Together, we can take
                             our money from saplings to well rooted trees!</b></i></h4>
 
@@ -88,6 +100,49 @@ export default function main() {
                     </div>
                 </div>
             </div>
+            {/* ----------------------------------- */}
+
+            <div className="container3">
+                <div className="row mt-5 mb-5">
+                    <div className="col">
+                        <div className="row mt-5 mb-5">
+                            <div className="col"></div>
+                            <div className="row mt-5 pt-5 mb-5 pb-5 px-5 text-center">
+                                <div className="col-lg-8 col-sm-12 px-5 ">
+                                    <br />
+                                    <br />
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                    </p>
+                                    <h3>"Through this app, I was able to save for my dream computer build.
+                                    Easy to use goal setting tool with friends rooting for me to get it made it an
+                                    easy to obtain goal for me."
+                                        </h3>
+                                    <br />
+                                    <h4><b><i>-Harris Green</i></b></h4>
+                                </div>
+                                <img src='./harrisgreen.jpg' className="col-lg-4 col-sm-12 w-25 card-img-top img-fluid rounded-circle mw-25" alt="review" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Footer />
+
         </div>
     )
 }
