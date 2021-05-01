@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-export default function Authenticate() {
+export default function Authenticate(props) {
+    let history = useHistory();
+    const [token, setToken] = useState('')
     const [formData, setFormData] = useState({})
 
     const handleChange = (e) => {
-
         setFormData(previousState => (
             {
                 ...previousState,
@@ -17,27 +19,39 @@ export default function Authenticate() {
 
     }
 
+    const saveToken = (newToken) => {
+        setToken(newToken) 
+        window.localStorage.setItem('token', newToken)
+        console.log("success", newToken)
+
+    }
+
     const handleSubmit = (e) => {
 
         e.preventDefault();
         if (formData.password.length < 8) {
             console.log('not working')
+            alert("make sure all input fields are correct")
         } else {
             const apiUrl = 'https://finalproject-contactsmiththay315914.codeanyapp.com/api/register'
             axios.post(apiUrl, formData)
                 .then(response => {
+                    saveToken(response.data.data.token)
                     console.log(response)
+                    sessionStorage.setItem('token', response.data.data.token)
+                    history.push('/dashboard');
 
-                    // save token
+                
                     // useHistory push to Dashboard
                 })
                 .catch(error => {
                     console.log(error)
                 })
         }
+        e.preventDefault()
 
     }
-    console.log(formData)
+
 
     // setup form validation
     // setup error handling from API
@@ -45,6 +59,7 @@ export default function Authenticate() {
     return (
         <div>
             <Navbar />
+
             <div className="LoginBox text-center mb-5" >
                 <img src="./SAPLING.png" className="w-25" />
                 <main className="form-signin">
@@ -61,7 +76,6 @@ export default function Authenticate() {
                                         placeholder="Full Name"
                                         onChange={handleChange}
                                         value={formData.name || ''}
-
                                     />
                                     <label htmlFor="floatingInput">Name</label>
                                 </div>
@@ -89,7 +103,7 @@ export default function Authenticate() {
                                     />
                                     <label htmlFor="floatingPassword">Password</label>
                                 </div>
-                                <button className="w-100 btn btn-lg btn-success" type="submit">
+                                <button className="w-100 btn btn-success" type="submit" onClick={handleSubmit}>
                                     Sign Up
                               </button>
                             </form>
