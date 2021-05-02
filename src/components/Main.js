@@ -11,7 +11,7 @@ export default function main() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="hero-text col-xs-12 col-sm-6 col-md-8">
-                            <p> Grow Your Money</p>
+                            <p> <i>Grow Your Money </i></p>
                             <p className='hero-sub'><i>"<b>together</b> we can take
                             our money <br />from saplings to well rooted trees"</i>
                             </p>
@@ -108,7 +108,7 @@ export default function main() {
                         <div className="row mt-5 mb-5">
                             <div className="col"></div>
                             <div className="row mt-5 pt-5 mb-5 pb-5 px-5 text-center">
-                                <div className="col-lg-8 col-sm-12 px-5 ">
+                                <div className="col-md-6 col-sm-12 px-5 ">
                                     <br />
                                     <br />
                                     <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -132,16 +132,21 @@ export default function main() {
                                     easy to obtain goal for me."
                                         </h3>
                                     <br />
+
                                     <h4><b><i>-Harris Green</i></b></h4>
-                                </div>
-                                <img src='./harrisgreen.jpg' className="col-lg-4 col-sm-12 w-25 card-img-top img-fluid rounded-circle mw-25" alt="review" />
+                                    </div>
+                                    <div className="col-md-6 col-sm-12" >
+                                        <img src='./harrisgreen.jpg' className="w-50 card-img-top img-fluid rounded-circle mt-25" alt="review" />
+                                    </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <Footer />
+
+          <Footer />
 
         </div>
     )
