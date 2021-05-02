@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
+
 
 export default function Dashboard() {
     return (
         <div>
-            Hello World
+        <Navbar />
+            <br />
+            <br />
+            <br />
+           <div>Hello World</div>
+        <Footer />
         </div>
     )
 }
