@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import { BrowserRouter as  Link, useHistory } from 'react-router-dom';
-
+import { useAuth } from '../utilities/AuthContext';
+import { BrowserRouter as Link, useHistory } from 'react-router-dom';
 
 
 export default function Authenticate(props) {
-    let history = useHistory();
-    const [token, setToken] = useState('')
+    const history = useHistory();
+    // const [token, setToken] = useState('')
     const [formData, setFormData] = useState({})
 
     const handleChange = (e) => {
@@ -19,42 +19,41 @@ export default function Authenticate(props) {
                 [e.target.name]: e.target.value
             }
         ))
-
     }
 
-    const saveToken = (newToken) => {
-        setToken(newToken)
-        window.localStorage.setItem('token', newToken)
-        console.log("success", newToken)
+    const { register } = useAuth()
 
-    }
+    // const saveToken = (newToken) => {
+    //     setToken(newToken)
+    //     window.localStorage.setItem('token', newToken)
+    //     console.log("success", newToken)
+    // }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => {  history.push('/dashboard')
 
         e.preventDefault();
         if (formData.password.length < 8) {
             console.log('not working')
             alert("make sure all input fields are correct")
         } else {
-            const apiUrl = 'https://finalproject-contactsmiththay315914.codeanyapp.com/api/register'
-            axios.post(apiUrl, formData)
-                .then(response => {
-                    saveToken(response.data.data.token)
-                    console.log(response)
-                    sessionStorage.setItem('token', response.data.data.token)
-                    history.push('/dashboard');
-                })
-                .catch(error => {
-                    console.log(error)
-                })
+            register(formData, history);
+           
+
+
+            //     const apiUrl = 'https://finalproject-contactsmiththay315914.codeanyapp.com/api/register'
+            //     axios.post(apiUrl, formData)
+            //         .then(response => {
+            //             saveToken(response.data.data.token)
+            //             console.log(response)
+            //             sessionStorage.setItem('token', response.data.data.token)
+            //             history.push('/dashboard');
+            //         })
+            //         .catch(error => {
+            //             console.log(error)
+            //         })
+            // }
         }
-        e.preventDefault()
-
     }
-
-
-    // setup form validation
-    // setup error handling from API
 
     return (
         <div>
@@ -64,6 +63,7 @@ export default function Authenticate(props) {
                 <img src="./SAPLING.png" className="w-25 pt-5" />
                 <h2><i><b>Sign Up & Start Growing</b></i></h2>
                 <br />
+
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-5 col-md-5 col-sm-5">
                         <form
@@ -93,15 +93,16 @@ export default function Authenticate(props) {
                         </form>
                         <div className="row pt-3 d-flex justify-content-center">
                             <div className="col-lg-5 col-md-8 col-sm-10">
-                               <button className="w-100 btn btn-success" type="submit" onClick={handleSubmit}>
-                                  Sign Up
+                                <button className="w-100 btn btn-success" type="submit" onClick={handleSubmit}>
+                                    Sign Up
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-          
+
             <Footer />
         </div>
     )

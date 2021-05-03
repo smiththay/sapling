@@ -16,7 +16,7 @@ export const AuthHelper = () => {
 
         if (lsToken) {
             axiosHelper({
-                url: '/api/auth/user',
+                url: '/api/register',
                 successMethod: saveUserData,
                 failureMethod: destroyToken,
                 token: lsToken
@@ -31,10 +31,17 @@ export const AuthHelper = () => {
         console.log("we got the user!", res.data)
     }
 
-    function saveToken(res) {
-        const APItoken = res.data.data.token || res.data.access_token;
-        setToken(APItoken)
+    function saveToken(res, history) {
+        let APItoken; // Initalize variable
+        if (res.config.url === "https://finalproject-contactsmiththay315914.codeanyapp.com/api/register") {
+            APItoken = res.data.data.token
+        } else if (res.config.url === "https://finalproject-contactsmiththay315914.codeanyapp.com/oauth/token") {
+            APItoken = res.data.access_token
+        }
+        // const APItoken = res.data.data.token || res.data.access_token;
+        setToken(APItoken);
         window.localStorage.setItem('token', APItoken)
+        history.replace('/dashboard');
     }
 
     function destroyToken() {
@@ -42,24 +49,30 @@ export const AuthHelper = () => {
         window.localStorage.removeItem('token');
     }
 
-    function register(registrationData) {
+    function register(registrationData, history) {
         axiosHelper({
             data: registrationData,
             method: 'post',
-            url: '/api/auth/register',
-            successMethod: saveToken
+            url: '/api/register',
+            successMethod: (res) => saveToken(res, history)
         })
 
     }
 
-    function login(loginData) {
+    function login(loginData, history) {
         axiosHelper({
-            data: loginData,
+            data: {
+            grant_type: "password",
+            client_id: "2",
+            client_secret: "BEQ7Qltj916PmZ5csKJfHVVVswYbJI6pEzrHSsuX",
+            ...loginData
+            },
             method: 'post',
             url: '/oauth/token',
-            successMethod: saveToken
+            successMethod: (res) => saveToken(res, history)
         })
     }
+ 
 
     function logout() {
         axiosHelper({
@@ -69,10 +82,6 @@ export const AuthHelper = () => {
         })
     }
 
-    // sign up
-    // log in
-    // getting user information (such as the token, or the userdata)
-    // log out
 
     return { token, register, login, logout }
 

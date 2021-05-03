@@ -3,15 +3,36 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 
+
 export default function Dashboard() {
+
+
     return (
         <div>
-        <Navbar />
+            <Navbar />
             <br />
             <br />
             <br />
-           <div>Hello World</div>
-        <Footer />
+            <div className="container text-center">
+                <h1>Hello World This Is Your Dashboard</h1>
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+                <div className='row mt-3'>
+                
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 }
