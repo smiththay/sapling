@@ -8,7 +8,7 @@ export default function main() {
         <div>
             <Navbar />
             <section className="bgimage">
-                <div className="container-fluid">
+                <div className="container">
                     <div className="row">
                         <div className="hero-text col-xs-12 col-sm-6 col-md-8">
                             <p> <i>Grow Your Money </i></p>
@@ -128,7 +128,7 @@ export default function main() {
                                         </svg>
                                     </p>
                                     <h3>"Through this app, I was able to save for my dream computer build.
-                                    Easy to use goal setting tool with friends rooting for me to get it made it an
+                                    Easy to use goal setting tool with friends rooting for me made it an
                                     easy to obtain goal for me."
                                         </h3>
                                     <br />

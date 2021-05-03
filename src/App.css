@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size:100%;
-  background-attachment: fixed;
+  background-attachment:fixed;
 }
 
 .navbar-brand{
@@ -14,6 +14,7 @@
   height: 40px;
   border-radius: 50%;
   margin-top: -115px;
+  margin-left: -50px;
 }
 .hero-text{
   font-size: 80px;

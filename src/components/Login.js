@@ -35,7 +35,7 @@ export default function Login() {
                             </div>
                             <span><p>Need an account? <Link to="/register">Register Here</Link></p></span>
                         </form>
-                        <div className="row pt-5 d-flex justify-content-center">
+                        <div className="row pt-3 d-flex justify-content-center">
                             <div className="col-lg-5 col-md-8 col-sm-10">
                                <button className="w-100 btn btn-success" type="submit" >
                                   Login

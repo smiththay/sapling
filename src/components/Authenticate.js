@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import { BrowserRouter as Link, useHistory } from 'react-router-dom';
+import { BrowserRouter as  Link, useHistory } from 'react-router-dom';
 
 
 
@@ -91,7 +91,7 @@ export default function Authenticate(props) {
                             </div>
                             <span><p>Already have an account? <Link to="/login">Login Here</Link></p></span>
                         </form>
-                        <div className="row pt-5 d-flex justify-content-center">
+                        <div className="row pt-3 d-flex justify-content-center">
                             <div className="col-lg-5 col-md-8 col-sm-10">
                                <button className="w-100 btn btn-success" type="submit" onClick={handleSubmit}>
                                   Sign Up
