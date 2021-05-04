@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
-import Navbar from './Navbar';
-import Footer from './Footer';
+// import Navbar from './Navbar';
+// import Footer from './Footer';
 
 import { useAuth } from '../utilities/AuthContext';
 import { BrowserRouter as Link, useHistory } from 'react-router-dom';
@@ -23,13 +23,9 @@ export default function Authenticate(props) {
 
     const { register } = useAuth()
 
-    // const saveToken = (newToken) => {
-    //     setToken(newToken)
-    //     window.localStorage.setItem('token', newToken)
-    //     console.log("success", newToken)
-    // }
 
-    const handleSubmit = (e) => {  history.push('/dashboard')
+    const handleSubmit = (e) => {  
+        // history.push('/dashboard')
 
         e.preventDefault();
         if (formData.password.length < 8) {
@@ -37,27 +33,13 @@ export default function Authenticate(props) {
             alert("make sure all input fields are correct")
         } else {
             register(formData, history);
-           
-
-
-            //     const apiUrl = 'https://finalproject-contactsmiththay315914.codeanyapp.com/api/register'
-            //     axios.post(apiUrl, formData)
-            //         .then(response => {
-            //             saveToken(response.data.data.token)
-            //             console.log(response)
-            //             sessionStorage.setItem('token', response.data.data.token)
-            //             history.push('/dashboard');
-            //         })
-            //         .catch(error => {
-            //             console.log(error)
-            //         })
-            // }
+                  
         }
     }
 
     return (
         <div>
-            <Navbar />
+      
 
             <div className="container text-center mb-5" >
                 <img src="./SAPLING.png" className="w-25 pt-5" />
@@ -103,7 +85,7 @@ export default function Authenticate(props) {
 
             </div>
 
-            <Footer />
+           
         </div>
     )
 }

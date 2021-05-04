@@ -1,38 +1,27 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import React, { useState } from 'react';
+import { useAuth } from '../utilities/AuthContext';
+import { GoalProvider } from '../utilities/GoalContext';
+import GoalTracker from './GoalTracker';
+import GoalList from './GoalList';
 
 
-
-export default function Dashboard() {
-
+export default function Dashboard(props) {
+    const { token } = useAuth()
+   // console.log(token)
 
     return (
-        <div>
-            <Navbar />
-            <br />
-            <br />
-            <br />
-            <div className="container text-center">
-                <h1>Hello World This Is Your Dashboard</h1>
+        <>
+            <GoalProvider token={token}>
+                <div className='container text-center mt-5 pt-5'>
+                    <h1>Hello World This Is Your Dashboard</h1>
 
+                    <GoalTracker />
+                    <hr />
+                    <GoalList />
 
-
-
-
-
-
-
-
-
-
-                
-                
-                <div className='row mt-3'>
-                
                 </div>
-            </div>
-            <Footer />
-        </div>
+            </GoalProvider>
+        </>
+
     )
 }

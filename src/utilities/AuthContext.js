@@ -16,7 +16,7 @@ export const AuthHelper = () => {
 
         if (lsToken) {
             axiosHelper({
-                url: '/api/register',
+                url: '/api/user',
                 successMethod: saveUserData,
                 failureMethod: destroyToken,
                 token: lsToken
@@ -64,7 +64,7 @@ export const AuthHelper = () => {
             data: {
             grant_type: "password",
             client_id: "2",
-            client_secret: "BEQ7Qltj916PmZ5csKJfHVVVswYbJI6pEzrHSsuX",
+            client_secret: "rZLrDxs7AjiWpeaJrA4nZ19hYix0ffeLlcVJmkHT",
             ...loginData
             },
             method: 'post',

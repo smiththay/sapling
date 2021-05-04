@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
+// import Footer from './Footer';
+// import Navbar from './Navbar';
 
 export default function main() {
     return (
         <div>
-            <Navbar />
+         
             <section className="bgimage">
                 <div className="container">
                     <div className="row">
@@ -82,7 +82,7 @@ export default function main() {
                                 <div className="card-body">
                                     <h3 className="card-title"><b>Cultivate Community</b></h3>
                                     <h5 className="card-text">With the support of like minded individuals cheering you on,
-                                            it becomes much easier to stay focused and persevere</h5>
+                                            it becomes much easier to stay focused and persevere.</h5>
                                 </div>
                             </div>
                         </div>
@@ -91,8 +91,8 @@ export default function main() {
                                 <img src="./win.png" className="card-img-top" alt="win" />
                                 <div className="card-body">
                                     <h3 className="card-title"><b>Succeed Selflessly</b></h3>
-                                    <h5 className="card-text">Others will achieve their savings goals with your encouragement,
-                                    the same way you will combined the tools to track your them.
+                                    <h5 className="card-text">Others will achieve their goals with our tools combined with your encouragement,
+                                    and in vice versa.
                                     </h5>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ export default function main() {
             </div>
 
 
-          <Footer />
+          
 
         </div>
     )
