@@ -1,15 +1,16 @@
-import './App.css';
-import Main from './components/Main';
-import Authenticate from './components/Authenticate';
+import './App.css'
+import Main from './components/Main'
+import Authenticate from './components/Authenticate'
 import Login from './components/Login'
-import Dashboard from './components/Dashboard';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Authorized from './components/Authorized'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 
 
-import { AuthProvider } from './utilities/AuthContext';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { AuthProvider } from './utilities/AuthContext'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
         <Router>
           <Navbar />
           {/* <div className="container text-center mb-5" > */}
+
+
+          <Authorized />
+
           <Switch>
 
             <Route exact path='/'>
@@ -31,10 +36,6 @@ function App() {
 
             <Route path="/login" >
               <Login />
-            </Route>
-        
-            <Route path="/dashboard">
-              <Dashboard />
             </Route>
 
           </Switch>

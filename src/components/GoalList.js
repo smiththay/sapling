@@ -5,7 +5,6 @@ import { Circle } from 'rc-progress';
 export default function GoalList(props) {
     const { myGoals } = useGoals()
 
-
     const mapGoals = myGoals.map((goal, index) => {
         console.log((Math.floor((goal.progress/goal.total)*100)))
         return (
@@ -17,7 +16,7 @@ export default function GoalList(props) {
                     <div className='row d-flex justify-content-center mt-5'>
                         <div className ='col-6'>
                         <Circle percent= {(goal.progress/goal.total)*100} strokeWidth="4" strokeColor="#228b22" className='mw-25'/>
-                        <span>%{((goal.progress/goal.total)*100)}</span>
+                        <span><b>%{((goal.progress/goal.total)*100).toFixed(2)}</b></span>
                         </div>                   
                     </div>
                     <div className="card-body">

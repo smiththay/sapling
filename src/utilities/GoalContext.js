@@ -6,12 +6,17 @@ const GoalContext = createContext({})
 export const GoalHelper = (props) => {
 
     const [myGoals, setMyGoals] = useState([])
+    const [allGoals, setAllGoals] = useState([])
 
     function saveMyGoals(res) {
         setMyGoals(res.data)
     }
-    
-    //See all our goals
+
+    function saveAllGoals(res) {
+        setAllGoals(res.data)
+    }
+
+    //See all personal goals
     function getMyGoals() {
         axiosHelper({
             url: '/api/goals/personal',
@@ -23,6 +28,8 @@ export const GoalHelper = (props) => {
         if (props.token && props.token.length > 0) {
 
             getMyGoals()
+            getAllGoals()
+
         }
     }, [props.token])
 
@@ -37,19 +44,26 @@ export const GoalHelper = (props) => {
             successMethod: saveMyGoals
         })
     }
-
+   //See all public goals
+    function getAllGoals() {
+        axiosHelper({
+            url: '/api/goals/all',
+            token: props.token,
+            successMethod: saveAllGoals
+        })
+    }
 
 
     //Delete goal
-    //Edit Goal
-    //See all public goals 
+    //Edit Goal 
+
     //comment on Goal
     //like Goal 
 
 
 
 
-    return { myGoals, createGoal }
+    return { myGoals, allGoals, createGoal }
 }
 
 

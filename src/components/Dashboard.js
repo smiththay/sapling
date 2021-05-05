@@ -1,33 +1,33 @@
-import React, { useState } from 'react';
-import { useAuth } from '../utilities/AuthContext';
-import { GoalProvider } from '../utilities/GoalContext';
+import React from 'react';
+
 import GoalTracker from './GoalTracker';
 import GoalList from './GoalList';
+import { Link } from 'react-router-dom';
 
 
 export default function Dashboard(props) {
-    const { token } = useAuth()
-   // console.log(token)
+
+    // console.log(token)
 
     return (
-        <>
-      
-            <GoalProvider token={token}>
-                <div className='container text-center mt-5 pt-5'>
-                    <h1>Hello World This Is Your Dashboard</h1>
-                    <div className='row'>
-                        <div className ='col'>
-                            
-                        </div>
-                    </div>
 
-                    <GoalTracker />
-                    <hr />
-                    <GoalList />
 
+
+        <div className='container text-center mt-5 pt-5'>
+            <h1>Hello World This Is Your Dashboard</h1>
+            <div className='row'>
+                <div className='col'>
+                    <Link to="/community">Community Page</Link>
                 </div>
-            </GoalProvider>
-        </>
+            </div>
+
+            <GoalTracker />
+            <hr />
+            <GoalList />
+
+        </div>
+
+
 
     )
 }

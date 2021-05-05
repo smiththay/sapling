@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Circle } from 'rc-progress';
+import React, { useState } from 'react'
+import { Circle } from 'rc-progress'
 import { useGoals } from '../utilities/GoalContext'
 import { useAuth } from '../utilities/AuthContext'
 
@@ -7,6 +7,7 @@ export default function GoalTracker() {
     const [percent, setPercent] = useState(100)
     const [goalData, setGoalData] = useState({community_vis:false})
     const { token } = useAuth()
+    console.log(token)
 
 
 
