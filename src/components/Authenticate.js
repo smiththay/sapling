@@ -11,6 +11,7 @@ export default function Authenticate(props) {
     const history = useHistory();
     // const [token, setToken] = useState('')
     const [formData, setFormData] = useState({})
+    console.log(formData)
 
     const handleChange = (e) => {
         setFormData(previousState => (
@@ -42,7 +43,7 @@ export default function Authenticate(props) {
       
 
             <div className="container text-center mb-5" >
-                <img src="./SAPLING.png" className="w-25 pt-5" />
+                <img src="./SAPLING.png" className="w-25 pt-5" alt="logo"/>
                 <h2><i><b>Sign Up & Start Growing</b></i></h2>
                 <br />
 

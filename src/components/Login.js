@@ -6,6 +6,7 @@ import { BrowserRouter as Link, useHistory } from 'react-router-dom';
 export default function Login() {
     const history = useHistory()
     const [formData, setFormData] = useState({})
+    
 
     const handleChange = (e) => {
         setFormData(previousState => (
@@ -21,17 +22,14 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         login(formData, history)
-        console.log(formData)
-
+        
     }
 
-
+   
     return (
         <div>
-          
-
             <div className="container text-center mb-5" >
-                <img src="./SAPLING.png" className="w-25 pt-5" />
+                <img src="./SAPLING.png" className="w-25 pt-5" alt="logo" />
                 <h2><i><b>Login, We're Rooting For You</b></i></h2>
                 <br />
                 <div className="row d-flex justify-content-center">
@@ -63,14 +61,9 @@ export default function Login() {
                                 </div>
                             </div>
                         </form>
-
-
-
                     </div>
                 </div>
             </div>
-
-           
         </div>
     )
 }

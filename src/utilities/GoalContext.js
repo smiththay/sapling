@@ -9,8 +9,8 @@ export const GoalHelper = (props) => {
 
     function saveMyGoals(res) {
         setMyGoals(res.data)
-    
     }
+    
     //See all our goals
     function getMyGoals() {
         axiosHelper({

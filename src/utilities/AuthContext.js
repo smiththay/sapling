@@ -60,18 +60,24 @@ export const AuthHelper = () => {
     }
 
     function login(loginData, history) {
+       
         axiosHelper({
             data: {
             grant_type: "password",
             client_id: "2",
             client_secret: "rZLrDxs7AjiWpeaJrA4nZ19hYix0ffeLlcVJmkHT",
             ...loginData
+           
             },
+            
             method: 'post',
             url: '/oauth/token',
-            successMethod: (res) => saveToken(res, history)
+            successMethod: (res) => saveToken(res, history),
+          
         })
+        
     }
+   
  
 
     function logout() {

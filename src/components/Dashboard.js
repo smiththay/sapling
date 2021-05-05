@@ -11,9 +11,15 @@ export default function Dashboard(props) {
 
     return (
         <>
+      
             <GoalProvider token={token}>
                 <div className='container text-center mt-5 pt-5'>
                     <h1>Hello World This Is Your Dashboard</h1>
+                    <div className='row'>
+                        <div className ='col'>
+                            
+                        </div>
+                    </div>
 
                     <GoalTracker />
                     <hr />

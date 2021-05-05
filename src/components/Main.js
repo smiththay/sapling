@@ -20,14 +20,15 @@ export default function main() {
                     </div>
 
                     {/* <div className='row'>
-                        <div className='col'>
+                          <div className='col'>
                             <div className="arrow">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
-                        </div>
-                    </div> */}
+                          </div>
+                        </div> */}
+
                 </div>
             </section>
             {/* ------------------------------------------------------ */}
@@ -52,7 +53,7 @@ export default function main() {
 
                             <div className="row  text-center">
                                 <div className="col">
-                                    <img src='./SAPLING.png' className='w-50' />
+                                    <img src='./SAPLING.png' className='w-50' alt="logo" />
                                 </div>
                             </div>
                         </div>

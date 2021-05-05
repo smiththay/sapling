@@ -4,9 +4,10 @@ import { useGoals } from '../utilities/GoalContext'
 import { useAuth } from '../utilities/AuthContext'
 
 export default function GoalTracker() {
-    const [percent, setPercent] = useState(50)
+    const [percent, setPercent] = useState(100)
     const [goalData, setGoalData] = useState({community_vis:false})
     const { token } = useAuth()
+
 
 
     const handleChange = (e) => {
@@ -14,20 +15,18 @@ export default function GoalTracker() {
         setGoalData(previousState => (
             {
                 ...previousState,
-                [e.target.name]: value
+                [e.target.name]: value,   
             }
         ))
     }
-
     const { createGoal } = useGoals()
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
         createGoal(goalData, token)
 
     }
-
+    console.log(goalData)
     return (
         <div>
             <div className="card mb-3">
@@ -82,7 +81,10 @@ export default function GoalTracker() {
                                 </button>
                                 </div>
                             </div>
+                       
+                       
                         </form>
+                        
                     </div>
                 </div>
             </div>
