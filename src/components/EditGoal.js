@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import { Circle } from 'rc-progress'
 import { useGoals } from '../utilities/GoalContext'
 import { useAuth } from '../utilities/AuthContext'
+import {useParams} from 'react-router-dom'
+//import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-export default function GoalTracker() {
+export default function EditGoal(props) {
     const [percent, setPercent] = useState(100)
     const [goalData, setGoalData] = useState({community_vis:false})
     const { token } = useAuth()
- 
+    const {id} = useParams()
+    //const history = useHistory()
+    
+   // console.log(id)
+
 
     const handleChange = (e) => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -18,17 +25,24 @@ export default function GoalTracker() {
             }
         ))
     }
-    const { createGoal } = useGoals()
+    const { editGoal } = useGoals()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createGoal(goalData, token)
-
+        editGoal(goalData, token, id)
     }
-    //console.log(goalData)
+    //history.replace('/dashboard')
+  
     return (
         <div>
-            <div className="card mb-3">
+           
+            <div className="card mt-5 pt-5 mb-3">
+            <div className="row text-center pt-5 mt-5">
+                <div className='col'>
+                    <Link to='/dashboard'>Back To Dashboard</Link>
+                </div>
+            </div>
+          
                 <div className="row g-0">
                     <div className="col-md-4 mx-5 px-5 my-5">
                         <Circle percent={percent} strokeWidth="4" strokeColor="#228b22" />
@@ -42,6 +56,7 @@ export default function GoalTracker() {
                                     onChange={handleChange}
                                     value={goalData.title || ''}
                                 />
+                                
                                 <label htmlFor="floatingInput">Goal Title</label>
                             </div>
                             <div className="form-floating">
@@ -76,14 +91,11 @@ export default function GoalTracker() {
                             <div className="row pt-3 d-flex justify-content-center">
                                 <div className="col-lg-5 col-md-8 col-sm-10">
                                     <button className="w-100 btn btn-success" type="submit">
-                                        Add Goal
+                                   Edit Goal
                                 </button>
                                 </div>
                             </div>
-                       
-                       
                         </form>
-                        
                     </div>
                 </div>
             </div>

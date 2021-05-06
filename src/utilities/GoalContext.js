@@ -15,7 +15,6 @@ export const GoalHelper = (props) => {
     function saveAllGoals(res) {
         setAllGoals(res.data)
     }
-
     //See all personal goals
     function getMyGoals() {
         axiosHelper({
@@ -24,12 +23,12 @@ export const GoalHelper = (props) => {
             successMethod: saveMyGoals
         })
     }
+
     useEffect(() => {
         if (props.token && props.token.length > 0) {
-
             getMyGoals()
             getAllGoals()
-
+            editGoal()
         }
     }, [props.token])
 
@@ -44,6 +43,7 @@ export const GoalHelper = (props) => {
             successMethod: saveMyGoals
         })
     }
+
    //See all public goals
     function getAllGoals() {
         axiosHelper({
@@ -53,19 +53,26 @@ export const GoalHelper = (props) => {
         })
     }
 
+    //Edit Goal 
+    function editGoal(goalData, token, id) {
+        //console.log(goalData)
+        axiosHelper({
+            token,
+            data: goalData,
+            method: 'post',
+            url: `/api/goals/update/${id}`,
+            successMethod: saveMyGoals  
+        })    
+    }
+
 
     //Delete goal
-    //Edit Goal 
-
-    //comment on Goal
-    //like Goal 
+    //add comment on Goal
+    //add like Goal 
 
 
-
-
-    return { myGoals, allGoals, createGoal }
+    return { myGoals, allGoals, createGoal, editGoal }
 }
-
 
 
 export const GoalProvider = (props) => {

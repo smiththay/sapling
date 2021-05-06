@@ -20,15 +20,14 @@ export const AuthHelper = () => {
                 successMethod: saveUserData,
                 failureMethod: destroyToken,
                 token: lsToken
-
             })
-
             setToken(lsToken)
         }
     }, [])
 
     function saveUserData(res) {
-        console.log("we got the user!", res.data)
+        //console.log(res.data)
+
     }
 
     function saveToken(res, history) {
@@ -50,6 +49,7 @@ export const AuthHelper = () => {
     }
 
     function register(registrationData, history) {
+       
         axiosHelper({
             data: registrationData,
             method: 'post',

@@ -11,7 +11,7 @@ export default function Authenticate(props) {
     const history = useHistory();
     // const [token, setToken] = useState('')
     const [formData, setFormData] = useState({})
-    console.log(formData)
+    //console.log(formData)
 
     const handleChange = (e) => {
         setFormData(previousState => (

@@ -6,9 +6,6 @@ import Authorized from './components/Authorized'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
-
-
-
 import { AuthProvider } from './utilities/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -16,11 +13,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
+    
       <AuthProvider>
         <Router>
           <Navbar />
           {/* <div className="container text-center mb-5" > */}
-
 
           <Authorized />
 
