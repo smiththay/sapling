@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 // import axios from 'axios';
 // import Navbar from './Navbar';
 // import Footer from './Footer';
 
-import { useAuth } from '../utilities/AuthContext';
-import { BrowserRouter as Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../utilities/AuthContext'
+import { BrowserRouter as Link, useHistory } from 'react-router-dom'
 
 
 export default function Authenticate(props) {

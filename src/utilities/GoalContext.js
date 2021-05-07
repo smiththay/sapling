@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import { axiosHelper } from './axiosHelper';
+import history from './history'
 
 const GoalContext = createContext({})
 
@@ -10,10 +11,12 @@ export const GoalHelper = (props) => {
 
     function saveMyGoals(res) {
         setMyGoals(res.data)
+        history.push('/dashboard')
     }
 
     function saveAllGoals(res) {
         setAllGoals(res.data)
+    
     }
     //See all personal goals
     function getMyGoals() {
@@ -29,6 +32,7 @@ export const GoalHelper = (props) => {
             getMyGoals()
             getAllGoals()
             editGoal()
+            deleteGoal()
         }
     }, [props.token])
 
@@ -39,7 +43,7 @@ export const GoalHelper = (props) => {
             token,
             data: goalData,
             method: 'post',
-            url: '/api/goals/create',
+            url: '/api/goal/create',
             successMethod: saveMyGoals
         })
     }
@@ -54,24 +58,40 @@ export const GoalHelper = (props) => {
     }
 
     //Edit Goal 
-    function editGoal(goalData, token, id) {
+    function editGoal(goalData, id) {
         //console.log(goalData)
         axiosHelper({
-            token,
+            token: props.token,
             data: goalData,
             method: 'post',
-            url: `/api/goals/update/${id}`,
+            url: `/api/goal/update/${id}`,
             successMethod: saveMyGoals  
         })    
     }
 
-
     //Delete goal
+    function deleteGoal(id) {
+        axiosHelper({
+            method: 'delete',
+            url: `/api/goal/destroy/${id}`,
+            token: props.token,
+            successMethod: saveMyGoals
+        })
+    }
+
+
+
+
+
+
+
+
+
     //add comment on Goal
     //add like Goal 
 
 
-    return { myGoals, allGoals, createGoal, editGoal }
+    return { myGoals, allGoals, createGoal, editGoal, deleteGoal}
 }
 
 

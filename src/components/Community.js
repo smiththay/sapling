@@ -3,13 +3,17 @@ import { useGoals } from '../utilities/GoalContext'
 import { Circle } from 'rc-progress'
 import { Link } from 'react-router-dom';
 
+
 export default function Community() {
 
-   
+
+
 const { allGoals  } = useGoals()
+
 
 const mapAllGoals = allGoals.map((goal, index) => {
     if(goal.community_vis == 1)
+
     return (
         <div className='col-6' key={index}>
             <div className="card">
@@ -17,6 +21,7 @@ const mapAllGoals = allGoals.map((goal, index) => {
                 </div>
                 <div className='row d-flex justify-content-center mt-5'>
                     <div className ='col-6'>
+            
                     <Circle percent={(goal.progress/goal.total)*100} strokeWidth="4" strokeColor="#228b22" className='mw-25'/>
                     <span><b>%{((goal.progress/goal.total)*100).toFixed(2)}</b></span>
                     </div>                   

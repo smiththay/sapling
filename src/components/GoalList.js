@@ -4,7 +4,10 @@ import { Circle } from 'rc-progress';
 import { Link } from 'react-router-dom';
 
 export default function GoalList(props) {
+
     const { myGoals } = useGoals()
+
+    
 
     const mapGoals = myGoals.map((goal, index) => {
         return (

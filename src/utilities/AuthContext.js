@@ -9,6 +9,7 @@ const AuthContext = createContext({});
 export const AuthHelper = () => {
 
     const [token, setToken] = useState('')
+    const [userData, setUserData] = useState({});
 
     // retaining user login information
     useEffect(() => {
@@ -26,6 +27,7 @@ export const AuthHelper = () => {
     }, [])
 
     function saveUserData(res) {
+        setUserData(res.data);
         //console.log(res.data)
 
     }
@@ -59,6 +61,15 @@ export const AuthHelper = () => {
 
     }
 
+     function index(token) {
+        axiosHelper({
+            method:'get',
+            url:'/api/auth/user',
+            successMethod: saveUserData,
+            token
+        })
+    }
+
     function login(loginData, history) {
        
         axiosHelper({
@@ -78,8 +89,6 @@ export const AuthHelper = () => {
         
     }
    
- 
-
     function logout() {
         axiosHelper({
             url: '/api/auth/logout',
@@ -89,7 +98,7 @@ export const AuthHelper = () => {
     }
 
 
-    return { token, register, login, logout }
+    return { token, register, login, logout, userData }
 
 }
 
