@@ -95,20 +95,22 @@ export default function EditGoal(props) {
                                     onChange={handleChange}
                                     value={goalData.community_vis || ''}
                                 />
-                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Public</label>
+                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><h5>Make Public</h5></label>
                             </div>
                             <div className="row pt-3 d-flex justify-content-center">
                                 <div className="col-lg-5 col-md-8 col-sm-10">
-                                    <button className="w-100 btn btn-success" type="submit">
+                                    <button className="w-100 btn btn-secondary" type="submit">
                                         Edit Goal
                                 </button>
                                 </div>
                             </div>
                         </form>
+                        <div className="row pt-3 d-flex justify-content-center">
                         <div className="col-lg-5 col-md-8 col-sm-10">
-                                    <button onClick={deleteGoalFun} className="w-100 btn btn-success" type="submit">
+                                    <button onClick={deleteGoalFun} className="w-100 btn btn-danger" type="submit">
                                         Delete Goal
                                 </button>
+                                </div>
                                 </div>
                     </div>
                 </div>

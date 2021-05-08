@@ -16,7 +16,7 @@ export const GoalHelper = (props) => {
 
     function saveAllGoals(res) {
         setAllGoals(res.data)
-    
+
     }
     //See all personal goals
     function getMyGoals() {
@@ -30,11 +30,16 @@ export const GoalHelper = (props) => {
     useEffect(() => {
         if (props.token && props.token.length > 0) {
             getMyGoals()
-            getAllGoals()
-            editGoal()
-            deleteGoal()
         }
     }, [props.token])
+    
+
+    useEffect(() => {
+        if (props.token && props.token.length > 0) {
+            getAllGoals()
+        }
+    }, [myGoals.length])
+
 
     //Create Goal
     function createGoal(goalData, token) {
@@ -48,7 +53,7 @@ export const GoalHelper = (props) => {
         })
     }
 
-   //See all public goals
+    //See all public goals
     function getAllGoals() {
         axiosHelper({
             url: '/api/goals/all',
@@ -65,8 +70,8 @@ export const GoalHelper = (props) => {
             data: goalData,
             method: 'post',
             url: `/api/goal/update/${id}`,
-            successMethod: saveMyGoals  
-        })    
+            successMethod: saveMyGoals
+        })
     }
 
     //Delete goal
@@ -79,24 +84,30 @@ export const GoalHelper = (props) => {
         })
     }
 
+    // //add comment on Goal
+    // function createComment(goalData, token) {
+    //     //console.log(goalData)
+    //     axiosHelper({
+    //         token,
+    //         data: goalData,
+    //         method: 'post',
+    //         url: '/api/comment/create',
+    //         //successMethod: saveMyGoals
+    //     })
+    // }
 
 
 
 
-
-
-
-
-    //add comment on Goal
     //add like Goal 
 
 
-    return { myGoals, allGoals, createGoal, editGoal, deleteGoal}
+    return { myGoals, allGoals, createGoal, editGoal, deleteGoal }
 }
 
 
 export const GoalProvider = (props) => {
-   // console.log(props)
+    // console.log(props)
 
     const initialContext = GoalHelper(props)
 

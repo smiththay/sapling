@@ -3,6 +3,7 @@ import Main from './components/Main'
 import Authenticate from './components/Authenticate'
 import Login from './components/Login'
 import Authorized from './components/Authorized'
+import AboutUs from './components/AboutUs'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -37,6 +38,11 @@ function App() {
 
             <Route path="/login" >
               <Login />
+            </Route>
+
+
+            <Route path="/about" >
+              <AboutUs />
             </Route>
 
           </Switch>

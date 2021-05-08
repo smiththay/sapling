@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useGoals } from '../utilities/GoalContext'
 import { Circle } from 'rc-progress';
 import { Link } from 'react-router-dom';
+import './GoalList.css'
 
 export default function GoalList(props) {
 
@@ -12,11 +13,11 @@ export default function GoalList(props) {
     const mapGoals = myGoals.map((goal, index) => {
         return (
            
-            <div className='col-6' key={index}>
-                <div className="card">
-                    <div className="card-header">
+            <div className='col-6 pt-5' key={index}>
+                <div className="card-list">
+                    {/* <div>
                         Goal {index + 1}
-                    </div>
+                    </div> */}
                     <div className='row d-flex justify-content-center mt-5'>
                         <div className ='col-6'>
                         <Circle percent= {(goal.progress/goal.total)*100} strokeWidth="4" strokeColor="#228b22" className='mw-25'/>

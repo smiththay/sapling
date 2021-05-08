@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
-// import axios from 'axios';
-// import Navbar from './Navbar';
-// import Footer from './Footer';
-
 import { useAuth } from '../utilities/AuthContext'
-import { BrowserRouter as Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export default function Authenticate(props) {
-    const history = useHistory();
     // const [token, setToken] = useState('')
     const [formData, setFormData] = useState({})
     //console.log(formData)
@@ -26,14 +21,13 @@ export default function Authenticate(props) {
 
 
     const handleSubmit = (e) => {  
-        // history.push('/dashboard')
 
         e.preventDefault();
         if (formData.password.length < 8) {
             console.log('not working')
             alert("make sure all input fields are correct")
         } else {
-            register(formData, history);
+            register(formData);
                   
         }
     }

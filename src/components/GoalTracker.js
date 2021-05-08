@@ -7,7 +7,9 @@ export default function GoalTracker() {
     const [percent, setPercent] = useState(100)
     const [goalData, setGoalData] = useState({community_vis:false})
     const { token } = useAuth()
- 
+    //console.log(token)
+
+
 
     const handleChange = (e) => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -25,7 +27,7 @@ export default function GoalTracker() {
         createGoal(goalData, token)
 
     }
-    //console.log(goalData)
+    console.log(goalData)
     return (
         <div>
             <div className="card mb-3">

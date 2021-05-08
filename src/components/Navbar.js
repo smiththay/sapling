@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../utilities/AuthContext';
 
 export default function Navbar() {
+    const { token, logout } = useAuth()
+    const handleSubmit = e => {
+        e.preventDefault()
+        logout()
+        console.log('successful logout')
+    }
     return (
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light pt-4">
@@ -16,16 +23,24 @@ export default function Navbar() {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">About Us</Link>
+                                <Link className="nav-link" to="/about">About Us</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to="/register">Sign Up</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/login">Login</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
+                    <form className="d-flex" onSubmit={handleSubmit}>
+                        {!token && <button className="btn btn-outline-success" type="submit"><Link to="/register">Register</Link></button>}
+                        {!token && <button className="btn btn-outline-success" type="submit"><Link to="/login">Login</Link></button>}
+                        {token && <Link className="nav-link" to="/community">Community</Link>}
+                        {token && <Link className="nav-link" to="/dashboard">DashBoard</Link>}
+                        {token && <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}><Link to="/">Logout</Link></button>}
+                 
+                    </form>
                 </div>
             </nav>
         </div>

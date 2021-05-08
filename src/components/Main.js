@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function main() {
     return (
         <div>
-         
+
             <section className="bgimage">
                 <div className="container">
                     <div className="row">
@@ -15,7 +15,7 @@ export default function main() {
                             <p className='hero-sub'><i>"<b>together</b> we can take
                             our money <br />from saplings to well rooted trees"</i>
                             </p>
-                            <p><Link to="/register" className="btn btn-warning btn-large">SIGN UP »</Link></p>
+                            <div><p><Link to="/register" style={{ textDecoration: 'none' }} className="button"><h3 className='mt-3'><b>SIGN UP</b></h3></Link></p></div>
                         </div>
                     </div>
 
@@ -109,45 +109,84 @@ export default function main() {
                         <div className="row mt-5 mb-5">
                             <div className="col"></div>
                             <div className="row mt-5 pt-5 mb-5 pb-5 px-5 text-center">
-                                <div className="col-md-6 col-sm-12 px-5 ">
-                                  
-                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <div className="col-md-6 col-sm-12 px-5 pt-5">
+
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                                         <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                     </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                         </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                         </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                         </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                         </svg>
                                     </p>
-                                    <h3>"Through this app, I was able to save up and pay off coding bootcamp.
+                                    <h3 className='pt-4 mt-4'>"Through this app, I was able to save up and pay off coding bootcamp.
                                     Easy to use goal setting tool with friends rooting for me made it an
                                     easy to achieve goal for me."
                                         </h3>
                                     <br />
 
                                     <h4><b><i>-Harris Green</i></b></h4>
-                                    </div>
-                                    <div className="col-md-6 col-sm-12 mt-1" >
-                                        <img src='./harrisgreen.jpg' className="w-50 card-img-top img-fluid rounded-circle mt-25" alt="review" />
-                                    </div>
-                                
+                                </div>
+                                <div className="col-md-6 col-sm-12" >
+                                    <img src='./harrisgreen.jpg' className="w-50 card-img-top img-fluid rounded-circle mt-25" alt="review" />
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            {/* ------------------------------------------------------- */}
+            <div className="row pb-5 text-center">
+                <div className="col-sm-6">
+                    <div className="card-spon mx-5">
+                        <div className="card-body">
+                            <h5 className="card-title">TripShare</h5>
+                            <p className="card-text">Saving for a trip, and need some help planning? Visit...</p>
+                            <a href="https://awesome-vacation-planner.web.app/" target="_blank" className="btn btn-success">TripShare</a>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6">
+                    <div className="card-spon mx-5">
+                        <div className="card-body">
+                            <h5 className="card-title">Yolo Fund</h5>
+                            <p className="card-text">Built that emergency fund now you want to learn to invest? Visit...</p>
+                            <a href="https://yolofund.reecewalter.com/" target="_blank" className="btn btn-success">Yolo Fund</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* --------------------------------------------------------------------------- */}
 
-          
+            <div className='row  mt-5 pt-5'>
+                <div className='col text-center'>
+                    <span><h1 className='sponsored'>Sponsored By:
+                    <a href='https://whyrecord.com/' target='_blank'>
+                            <img src='why.png' className="why" alt="review" />
+                        </a>
+                    </h1>
+                    </span>
 
+                </div>
+            </div>
+            <div className='row text-center mt-5 pt-5'>
+                <div className='col mt-5 pt-5'>
+                    <a href='#'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    back to top</a>
+                </div>
+            </div>
         </div>
     )
 }

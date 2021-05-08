@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import { useAuth } from '../utilities/AuthContext';
-import { BrowserRouter as Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
-    const history = useHistory()
+
     const [formData, setFormData] = useState({})
     
 
@@ -21,7 +21,7 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        login(formData, history)
+        login(formData)
         
     }
 

@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import { axiosHelper } from './axiosHelper'
+import history from './history'
 // code for user authentication
 
 const AuthContext = createContext({});
@@ -39,15 +40,16 @@ export const AuthHelper = () => {
         } else if (res.config.url === "https://finalproject-contactsmiththay315914.codeanyapp.com/oauth/token") {
             APItoken = res.data.access_token
         }
-        // const APItoken = res.data.data.token || res.data.access_token;
+      
         setToken(APItoken);
         window.localStorage.setItem('token', APItoken)
-        history.replace('/dashboard');
+        history.push('/dashboard');
     }
 
     function destroyToken() {
         setToken('')
-        window.localStorage.removeItem('token');
+        window.localStorage.removeItem('token')
+        history.replace('/')
     }
 
     function register(registrationData, history) {
@@ -76,7 +78,7 @@ export const AuthHelper = () => {
             data: {
             grant_type: "password",
             client_id: "2",
-            client_secret: "rZLrDxs7AjiWpeaJrA4nZ19hYix0ffeLlcVJmkHT",
+            client_secret: "n5sSon1N2Zrcg9mLIspncnApITp7LNf0rAQGqnvW",
             ...loginData
            
             },
@@ -91,7 +93,7 @@ export const AuthHelper = () => {
    
     function logout() {
         axiosHelper({
-            url: '/api/auth/logout',
+            url: '/api/logout',
             successMethod: destroyToken,
             token
         })
