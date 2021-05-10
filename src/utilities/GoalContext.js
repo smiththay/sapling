@@ -8,16 +8,25 @@ export const GoalHelper = (props) => {
 
     const [myGoals, setMyGoals] = useState([])
     const [allGoals, setAllGoals] = useState([])
+  
+    
 
     function saveMyGoals(res) {
         setMyGoals(res.data)
         history.push('/dashboard')
+        //history.goBack()
+        // if (history.location.pathname === '/' 
+        // || history.location.pathname === '/about' 
+        // || history.location.pathname === '/community'){  
+        // }
     }
 
     function saveAllGoals(res) {
         setAllGoals(res.data)
-
     }
+
+   
+    
     //See all personal goals
     function getMyGoals() {
         axiosHelper({
@@ -32,7 +41,7 @@ export const GoalHelper = (props) => {
             getMyGoals()
         }
     }, [props.token])
-    
+
 
     useEffect(() => {
         if (props.token && props.token.length > 0) {
@@ -42,10 +51,10 @@ export const GoalHelper = (props) => {
 
 
     //Create Goal
-    function createGoal(goalData, token) {
+    function createGoal(goalData) {
         //console.log(goalData)
         axiosHelper({
-            token,
+            token:props.token,
             data: goalData,
             method: 'post',
             url: '/api/goal/create',
@@ -84,25 +93,12 @@ export const GoalHelper = (props) => {
         })
     }
 
-    // //add comment on Goal
-    // function createComment(goalData, token) {
-    //     //console.log(goalData)
-    //     axiosHelper({
-    //         token,
-    //         data: goalData,
-    //         method: 'post',
-    //         url: '/api/comment/create',
-    //         //successMethod: saveMyGoals
-    //     })
-    // }
 
-
-
-
+    
     //add like Goal 
 
 
-    return { myGoals, allGoals, createGoal, editGoal, deleteGoal }
+    return { myGoals, allGoals, createGoal, editGoal, deleteGoal}
 }
 
 

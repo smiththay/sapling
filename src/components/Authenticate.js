@@ -35,7 +35,6 @@ export default function Authenticate(props) {
     return (
         <div>
       
-
             <div className="container text-center mb-5" >
                 <img src="./SAPLING.png" className="w-25 pt-5" alt="logo"/>
                 <h2><i><b>Sign Up & Start Growing</b></i></h2>

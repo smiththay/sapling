@@ -3,6 +3,8 @@ import { Circle } from 'rc-progress'
 import { useGoals } from '../utilities/GoalContext'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import './Edit.css'
+
 
 
 export default function EditGoal(props) {
@@ -45,18 +47,18 @@ export default function EditGoal(props) {
     return (
         <div>
 
-            <div className="card mt-5 pt-5 mb-3">
+            <div className="mt-5 pt-5 mx-5 mb-3">
                 <div className="row text-center pt-5 mt-5">
                     <div className='col'>
                         <Link to='/dashboard'>Back To Dashboard</Link>
                     </div>
                 </div>
 
-                <div className="row g-0">
-                    <div className="col-md-4 mx-5 px-5 my-5">
+                <div className="row justify-content-center g-0">
+                    {/* <div className="col-md-4 mx-5 px-5 my-5">
                         <Circle percent={percent} strokeWidth="4" strokeColor="#228b22" />
-                    </div>
-                    <div className="col-md-6 mx-5 px-5 my-5">
+                    </div> */}
+                    <div className="edit col-md-4 col-sm-10  px-5 my-5">
                         <form
                             onSubmit={handleSubmit}
                         >

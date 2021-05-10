@@ -10,12 +10,13 @@ const AuthContext = createContext({});
 export const AuthHelper = () => {
 
     const [token, setToken] = useState('')
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState({})
+    //const [allUsers, setAllUsers] = useState([])
 
     // retaining user login information
     useEffect(() => {
         let lsToken = window.localStorage.getItem('token');
-
+       // console.log(lsToken)
         if (lsToken) {
             axiosHelper({
                 url: '/api/user',
@@ -27,13 +28,28 @@ export const AuthHelper = () => {
         }
     }, [])
 
+    useEffect(() => {
+
+        if (token.length > 0) {
+            getUser()
+        }
+    }, [token])
+
+    // useEffect(() => {
+    //     if (token && token.length > 0) {
+    //         getAllUsers()
+    //     }
+    // }, [userData.length])
+
     function saveUserData(res) {
         setUserData(res.data);
-        //console.log(res.data)
-
+     
     }
+    // function saveAllUserData(res) {
+    //     setAllUsers(res.data);
+    // }
 
-    function saveToken(res, history) {
+    function saveToken(res) {
         let APItoken; // Initalize variable
         if (res.config.url === "https://finalproject-contactsmiththay315914.codeanyapp.com/api/register") {
             APItoken = res.data.data.token
@@ -52,40 +68,35 @@ export const AuthHelper = () => {
         history.replace('/')
     }
 
-    function register(registrationData, history) {
-       
+    function register(registrationData) {
         axiosHelper({
             data: registrationData,
             method: 'post',
             url: '/api/register',
-            successMethod: (res) => saveToken(res, history)
+            successMethod: saveToken
         })
-
     }
 
-     function index(token) {
+     function getUser(t) {
         axiosHelper({
             method:'get',
-            url:'/api/auth/user',
+            url:'/api/user',
             successMethod: saveUserData,
-            token
+            token: t
         })
     }
 
-    function login(loginData, history) {
-       
+    function login(loginData) {
         axiosHelper({
             data: {
             grant_type: "password",
             client_id: "2",
             client_secret: "n5sSon1N2Zrcg9mLIspncnApITp7LNf0rAQGqnvW",
             ...loginData
-           
             },
-            
             method: 'post',
             url: '/oauth/token',
-            successMethod: (res) => saveToken(res, history),
+            successMethod: saveToken
           
         })
         
@@ -99,8 +110,14 @@ export const AuthHelper = () => {
         })
     }
 
-
-    return { token, register, login, logout, userData }
+    // function getAllUsers() {
+    //     axiosHelper({
+    //         url: '/api/user/all',
+    //         token,
+    //         successMethod: saveAllUserData
+    //     })
+    // }
+    return { token, userData, register, login, logout}
 
 }
 

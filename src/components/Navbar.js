@@ -34,11 +34,11 @@ export default function Navbar() {
                         </ul>
                     </div>
                     <form className="d-flex" onSubmit={handleSubmit}>
-                        {!token && <button className="btn btn-outline-success" type="submit"><Link to="/register">Register</Link></button>}
-                        {!token && <button className="btn btn-outline-success" type="submit"><Link to="/login">Login</Link></button>}
-                        {token && <Link className="nav-link" to="/community">Community</Link>}
-                        {token && <Link className="nav-link" to="/dashboard">DashBoard</Link>}
-                        {token && <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}><Link to="/">Logout</Link></button>}
+                        {!token && <button className="btn btn-outline-success" type="submit"><Link style={{color: 'grey', textDecoration: 'none'}} to="/register">Register</Link></button>}
+                        {!token && <button className="btn btn-outline-success" type="submit"><Link style={{color: 'grey', textDecoration: 'none'}} to="/login">Login</Link></button>}
+                        {token && <Link className="nav-link" style={{color: 'grey'}} to="/community">Community</Link>}
+                        {token && <Link className="nav-link" style={{color: 'grey'}} to="/dashboard">DashBoard</Link>}
+                        {token && <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}><Link style={{color: 'grey', textDecoration: 'none'}} to="/">Logout</Link></button>}
                  
                     </form>
                 </div>
