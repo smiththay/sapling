@@ -11,26 +11,28 @@ export default function CommentAdd(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.createComment(commentData)
+        setCommentData('')
+        
         //console.log('submitted')
     }
     return (
-        <div className="row d-flex justify-content-center">
-            <form onSubmit={handleSubmit}>
-                <div className="col-9">
-                    <div className="form-floating">
+        <div className="row px-5 pt-2 d-flex">
+            <span><form onSubmit={handleSubmit} >
+                    <div className="form-floating col-12">
                         <input name='comment' type="text" className="form-control"
                             onChange={handleChange}
                             value={commentData}
                         />
-                        <label htmlFor="floatingInput">Rooting For You...</label>
+                        <label htmlFor="floatingInput">Add Comment...</label>
                     </div>
-                    <div className='col-3'>
-                        <button className=" btn btn-success" type="submit" >
-                            Add Comment
-                </button>
-                    </div>
+                
+                    <div className='col pt-2 pb-4 text-center'>
+                    <button className=" btn btn-success" type="submit" >
+                        Add Comment
+                    </button>
                 </div>
-            </form>
+                
+            </form></span>
         </div>
 
     )

@@ -10,14 +10,14 @@ export default function CommentList(props) {
 
         return (
 
-            <div key={index} className='col-12 mx-2 mb-3'>
+            <div key={index}  className='col-12 mb-3'>
                 {comment.content}
             </div>
         )
     });
 
     return (
-        <div className='container1 px-5 pt-5 mt-5'>
+        <div className='container1 mt-2'>
             <div className='row'>
                 {mapAllGoalComments}
             </div>

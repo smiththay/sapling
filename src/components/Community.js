@@ -29,7 +29,6 @@ export default function Community() {
             </div>
 
             <div className='row'>
-
                 {mapAllGoals}
             </div>
         </div>

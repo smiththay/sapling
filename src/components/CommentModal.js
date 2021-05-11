@@ -15,6 +15,7 @@ export default function CommentModal(props) {
     }
 
     function getComments() {
+        console.log(props.goal.id)
         axiosHelper({
             token,
             url: `/api/comments/${props.goal.id}`,
@@ -22,8 +23,10 @@ export default function CommentModal(props) {
         })
     }
     useEffect(() => {
-        getComments(props.goal.id)
-    }, [])
+        if (Object.keys(props.goal).length > 0) {
+            getComments(props.goal.id)
+        }
+    }, [Object.keys(props.goal).length])
 
     function createComment(content) {
         //console.log(goalData)
@@ -35,16 +38,13 @@ export default function CommentModal(props) {
             successMethod: getComments
         })
     }
-
-
-
-
+    console.log(props.goal.id)
     return (
         <div className='jam col-lg-4 col-md-6 col-sm-12 mb-5'>
             <div className="card-com text-center">
                 <div className='text-center'>
                     name
-        </div>
+                </div>
                 <h4 className="card-title text-center pt-3"><b>{props.goal.title}</b></h4>
                 <div className='row d-flex justify-content-center text-center mt-5'>
                     <div className='col-12'>
@@ -58,25 +58,27 @@ export default function CommentModal(props) {
                     <p className="card-text">{props.goal.description}</p>
                 </div>
                 <span><h2>$<b>{props.goal.progress}</b> /</h2><h5> ${props.goal.total}</h5></span>
-                <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" className="btn btn-warning" data-bs-toggle='modal' data-bs-target={`#model-id-${props.goal.id}`}>
                     comments
-        </button>
+                 </button>
             </div>
 
-            <div className="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade " id={`model-id-${props.goal.id}`} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="staticBackdropLabel">Rooting For You</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <CommentAdd createComment={createComment} />
+
                             <CommentList comments={comments} />
                         </div>
-                        <div className="modal-footer">
+                        {/* <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
+                        </div> */}
+                        <hr />
+                        <CommentAdd createComment={createComment} />
                     </div>
                 </div>
             </div>

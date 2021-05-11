@@ -95,7 +95,7 @@ export const GoalHelper = (props) => {
 
 
     
-    //add like Goal 
+   
 
 
     return { myGoals, allGoals, createGoal, editGoal, deleteGoal}

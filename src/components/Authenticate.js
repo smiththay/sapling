@@ -22,14 +22,14 @@ export default function Authenticate(props) {
 
     const handleSubmit = (e) => {  
 
-        e.preventDefault();
-        if (formData.password.length < 8) {
-            console.log('not working')
-            alert("make sure all input fields are correct")
-        } else {
-            register(formData);
+        e.preventDefault()
+        // if (formData.password.length < 8) {
+        //     console.log('not working')
+        //     alert("make sure all input fields are correct")
+        // } else {
+            register(formData)
                   
-        }
+        
     }
 
     return (
@@ -46,24 +46,25 @@ export default function Authenticate(props) {
                             onSubmit={handleSubmit}>
                             <div className="form-floating">
                                 <input name='name' type="text" className="form-control"
+                                
                                     onChange={handleChange}
                                     value={formData.name || ''}
                                 />
-                                <label htmlFor="floatingInput">Full Name</label>
+                                <label htmlFor="floatingInput">full name</label>
                             </div>
                             <div className="form-floating">
                                 <input name='email' type="email" className="form-control"
                                     onChange={handleChange}
                                     value={formData.email || ''}
                                 />
-                                <label htmlFor="floatingInput">Email Address</label>
+                                <label htmlFor="floatingInput">email address</label>
                             </div>
                             <div className="form-floating">
                                 <input name='password' type="password" className="form-control"
                                     onChange={handleChange}
                                     value={formData.password || ''}
                                 />
-                                <label htmlFor="floatingPassword">Password</label>
+                                <label htmlFor="floatingPassword">password must have atleast 8 characters</label>
                             </div>
                             <span><p>Already have an account? <Link to="/login">Login Here</Link></p></span>
                         </form>
@@ -74,6 +75,7 @@ export default function Authenticate(props) {
                                 </button>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 
