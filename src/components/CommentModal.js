@@ -38,29 +38,28 @@ export default function CommentModal(props) {
             successMethod: getComments
         })
     }
-    console.log(props.goal.id)
+
     return (
-        <div className='jam col-lg-4 col-md-6 col-sm-12 mb-5'>
+        <div className='col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-5'>
             <div className="card-com text-center">
-                <div className='text-center'>
-                    name
-                </div>
-                <h4 className="card-title text-center pt-3"><b>{props.goal.title}</b></h4>
-                <div className='row d-flex justify-content-center text-center mt-5'>
+
+                    {props.goal.user.name}
+
+                <h4 className="card-title text-center pt-1"><b>{props.goal.title}</b></h4>
+                <div className='row d-flex justify-content-center text-center px-5 pt-3'>
                     <div className='col-12'>
 
-                        <Circle percent={(props.goal.progress / props.goal.total) * 100} strokeWidth="4" strokeColor="#236b23" className='mw-25 mb-5' />
-                        <span><b>{((props.goal.progress / props.goal.total) * 100).toFixed(2)}% of the way there!</b></span>
+                        <Circle percent={(props.goal.progress / props.goal.total) * 100} strokeWidth="4" strokeColor="#236b23" className='mw-25 mb-3' />
+                        <span><b>{((props.goal.progress / props.goal.total) * 100).toFixed(2)}% </b></span>
                     </div>
                 </div>
                 <div className="card-body">
-
                     <p className="card-text">{props.goal.description}</p>
                 </div>
-                <span><h2>$<b>{props.goal.progress}</b> /</h2><h5> ${props.goal.total}</h5></span>
-                <button type="button" className="btn btn-warning" data-bs-toggle='modal' data-bs-target={`#model-id-${props.goal.id}`}>
+                        <h1>$<b>{props.goal.progress}</b><sub>/${props.goal.total}</sub> </h1>
+                <button type="button" className="btn btn-warning mt-3" data-bs-toggle='modal' data-bs-target={`#model-id-${props.goal.id}`}>
                     comments
-                 </button>
+                </button>
             </div>
 
             <div className="modal fade " id={`model-id-${props.goal.id}`} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -71,17 +70,34 @@ export default function CommentModal(props) {
                             <button type="button" className="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-
                             <CommentList comments={comments} />
                         </div>
-                        {/* <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div> */}
                         <hr />
                         <CommentAdd createComment={createComment} />
                     </div>
                 </div>
             </div>
         </div>
+
+          
+// <div className='col-md-6 col-sm-12 pt-5' key={index}>
+// <div className="card-list">
+
+//     <div className='row d-flex justify-content-center mt-5'>
+//         <div className ='col-6 border-danger'>
+//         <h2 className="card-title"><b>{goal.title}</b></h2>
+//         <Circle percent= {(goal.progress/goal.total)*100} strokeWidth="4" strokeColor="#228b22" className='mw-25 mb-5 mt-5'/>
+//         <span><b>{((goal.progress/goal.total)*100).toFixed(2)}% of the way there!</b></span>
+//         </div>                   
+//     </div>
+//     <div className="card-body ">
+    
+//         <p className="card-text">{goal.description}</p>
+//     </div>
+//     <h2><b>${goal.progress}</b> <sub>/${goal.total}</sub></h2>
+//     <Link className='btn btn-warning mt-3' to={'/edit/' + goal.id}>Edit Goal</Link>
+
+// </div>
+// </div>
     )
 }

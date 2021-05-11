@@ -36,6 +36,7 @@ export default function EditGoal(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         editGoal(goalData, id)
+
     }
     
     const deleteGoalFun = (e) => {
@@ -95,7 +96,7 @@ export default function EditGoal(props) {
                                 <input className="form-check-input" name="community_vis" type="checkbox" id="flexSwitchCheckDefault"
 
                                     onChange={handleChange}
-                                    value={goalData.community_vis || ''}
+                                    checked={!!goalData.community_vis}
                                 />
                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><h5>Make Public</h5></label>
                             </div>

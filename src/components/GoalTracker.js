@@ -9,8 +9,6 @@ export default function GoalTracker() {
     const { token } = useAuth()
     //console.log(token)
 
-
-
     const handleChange = (e) => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
         setGoalData(previousState => (
@@ -25,6 +23,7 @@ export default function GoalTracker() {
     const handleSubmit = (e) => {
         e.preventDefault();
         createGoal(goalData)
+        setGoalData('')
         window.scrollTo(0,document.body.scrollHeight);
         
     }

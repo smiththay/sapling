@@ -21,7 +21,7 @@ export default function Community() {
         }
     });
     return (
-        <div className='container1 px-5 pt-5 mt-5'>
+        <div className='container1 px-5 mx-5 pt-5 mt-5'>
             <div className='row text-center'>
                 <div className='col-12'>
                     <h1 className='mb-5 mt-5'>Community</h1>

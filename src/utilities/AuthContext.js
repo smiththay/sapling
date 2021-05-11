@@ -11,12 +11,11 @@ export const AuthHelper = () => {
 
     const [token, setToken] = useState('')
     const [userData, setUserData] = useState({})
-    //const [allUsers, setAllUsers] = useState([])
 
     // retaining user login information
     useEffect(() => {
         let lsToken = window.localStorage.getItem('token');
-       // console.log(lsToken)
+       // console.log(lsToken) 
         if (lsToken) {
             axiosHelper({
                 url: '/api/user',
@@ -35,19 +34,13 @@ export const AuthHelper = () => {
         }
     }, [token])
 
-    // useEffect(() => {
-    //     if (token && token.length > 0) {
-    //         getAllUsers()
-    //     }
-    // }, [userData.length])
+
 
     function saveUserData(res) {
         setUserData(res.data);
      
     }
-    // function saveAllUserData(res) {
-    //     setAllUsers(res.data);
-    // }
+  
 
     function saveToken(res) {
         let APItoken; // Initalize variable
@@ -59,7 +52,8 @@ export const AuthHelper = () => {
       
         setToken(APItoken);
         window.localStorage.setItem('token', APItoken)
-        history.push('/dashboard');
+        history.replace('/dashboard')
+    
     }
 
     function destroyToken() {
@@ -77,12 +71,12 @@ export const AuthHelper = () => {
         })
     }
 
-     function getUser(t) {
+     function getUser(token) {
         axiosHelper({
             method:'get',
             url:'/api/user',
             successMethod: saveUserData,
-            token: t
+            token: token
         })
     }
 
@@ -110,13 +104,7 @@ export const AuthHelper = () => {
         })
     }
 
-    // function getAllUsers() {
-    //     axiosHelper({
-    //         url: '/api/user/all',
-    //         token,
-    //         successMethod: saveAllUserData
-    //     })
-    // }
+  
     return { token, userData, register, login, logout}
 
 }

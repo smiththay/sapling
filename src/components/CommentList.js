@@ -11,7 +11,9 @@ export default function CommentList(props) {
         return (
 
             <div key={index}  className='col-12 mb-3'>
-                {comment.content}
+                <h5>{comment.content}</h5>
+                -{comment.user.name}
+                <hr />
             </div>
         )
     });

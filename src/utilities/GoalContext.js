@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import { axiosHelper } from './axiosHelper';
 import history from './history'
+import { useDeepCompareEffect} from 'react-use';
 
 const GoalContext = createContext({})
 
@@ -14,11 +15,7 @@ export const GoalHelper = (props) => {
     function saveMyGoals(res) {
         setMyGoals(res.data)
         history.push('/dashboard')
-        //history.goBack()
-        // if (history.location.pathname === '/' 
-        // || history.location.pathname === '/about' 
-        // || history.location.pathname === '/community'){  
-        // }
+       // history.goBack()
     }
 
     function saveAllGoals(res) {
@@ -26,7 +23,6 @@ export const GoalHelper = (props) => {
     }
 
    
-    
     //See all personal goals
     function getMyGoals() {
         axiosHelper({
@@ -43,11 +39,11 @@ export const GoalHelper = (props) => {
     }, [props.token])
 
 
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         if (props.token && props.token.length > 0) {
             getAllGoals()
         }
-    }, [myGoals.length])
+    }, [myGoals])
 
 
     //Create Goal
@@ -94,8 +90,6 @@ export const GoalHelper = (props) => {
     }
 
 
-    
-   
 
 
     return { myGoals, allGoals, createGoal, editGoal, deleteGoal}

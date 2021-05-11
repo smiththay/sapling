@@ -8,16 +8,12 @@ export default function GoalList(props) {
 
     const { myGoals } = useGoals()
 
-    
-
     const mapGoals = myGoals.map((goal, index) => {
         return (
            
             <div className='col-md-6 col-sm-12 pt-5' key={index}>
                 <div className="card-list">
-                    {/* <div>
-                        Goal {index + 1}
-                    </div> */}
+               
                     <div className='row d-flex justify-content-center mt-5'>
                         <div className ='col-6 border-danger'>
                         <h2 className="card-title"><b>{goal.title}</b></h2>
@@ -29,8 +25,8 @@ export default function GoalList(props) {
                     
                         <p className="card-text">{goal.description}</p>
                     </div>
-                    <span><h2>$<b>{goal.progress}</b> /</h2><h5> ${goal.total}</h5></span>
-                    <Link className='btn btn-warning mt-2' to={'/edit/' + goal.id}>Edit Goal</Link>
+                    <h2><b>${goal.progress}</b> <sub>/${goal.total}</sub></h2>
+                    <Link className='btn btn-warning mt-3' to={'/edit/' + goal.id}>Edit Goal</Link>
         
                 </div>
             </div>

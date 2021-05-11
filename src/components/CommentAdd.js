@@ -12,7 +12,6 @@ export default function CommentAdd(props) {
         e.preventDefault();
         props.createComment(commentData)
         setCommentData('')
-        
         //console.log('submitted')
     }
     return (
