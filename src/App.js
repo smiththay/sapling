@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Main from './components/Main'
+import Authenticate from './components/Authenticate'
+import Login from './components/Login'
+import Authorized from './components/Authorized'
+import AboutUs from './components/AboutUs'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
+import { Router } from 'react-router'
+import { AuthProvider } from './utilities/AuthContext'
+import { Switch, Route } from 'react-router-dom'
+import history from './utilities/history'
+import ScrollToTop from './components/ScrollToTop'
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Router history={history}>
+          <ScrollToTop>
+            <Navbar />
+
+            <Authorized />
+
+            <Switch>
+
+              <Route exact path='/'>
+                <Main />
+              </Route>
+
+              <Route path="/register" >
+                <Authenticate />
+              </Route>
+
+              <Route path="/login" >
+                <Login />
+              </Route>
+
+
+              <Route path="/about" >
+                <AboutUs />
+              </Route>
+
+            </Switch>
+
+            <Footer />
+          </ScrollToTop>
+        </Router>
+
+      </AuthProvider>
     </div>
   );
 }

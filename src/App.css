@@ -1,38 +1,152 @@
-.App {
+
+.bgimage {
+  width:100%;
+  height:800px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.568), rgba(22, 63, 22, 0.73)),
+  url('./SaplingHero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:100%;
+  background-attachment:fixed;
+  border-bottom-left-radius: 300px;
+}
+
+.mainFont{
+  font-family: 'Righteous', cursive;
+}
+
+.navbar-brand{
+  width: 46px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: -115px;
+  margin-left: -50px;
+}
+.hero-text{
+  font-family: 'Righteous', cursive;
+  font-size: 80px;
+  color: rgb(31, 68, 2);
+  /* position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0%;
+  top: 28%; 
   text-align: center;
+  width: 60%;  */
+}
+.hero-sub{
+  font-size: 30px;
+  color: aliceblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-text{
+  color: rgb(2, 47, 0);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.sponsored{
+  color: rgba(117, 118, 121, 0.589);
+}
+.why{
+  max-width: 10%;
+  height: auto;
+}
+/* -------------------------------main page link cards--------------------------------- */
+.card-spon{
+  color: rgb(0, 83, 21);
+  border-radius: 100px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.568), rgba(22, 63, 22, 0.73));
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 36px 18px 36px;
+  /* cursor: pointer; */
+}
+
+.card-spon:hover{
+ 
+
+  transform: scale(1.05);
+ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+
+
+ /* -------------------------------main sign up button----------------------------------------- */
+}
+:root {
+
+ 
+  --light: #eeb703;
+  --dark: #2a4e0b;
+  --text: #025600;
+}
+
+
+.button {
+  display: block;
+  width: 400px;
+  margin: 0 auto 0 auto;
+ 
+}
+
+.button {
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--light);
+  width: 470px;
+  height: 70px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 7px var(--light) inset;
+  margin-bottom: 15px;
+}
+
+.button:hover {
+  background-image: linear-gradient(
+    145deg,
+    transparent 10%,
+    var(--dark) 10% 20%,
+    transparent 20% 30%,
+    var(--dark) 30% 40%,
+    transparent 40% 50%,
+    var(--dark) 50% 60%,
+    transparent 60% 70%,
+    var(--dark) 70% 80%,
+    transparent 80% 90%,
+    var(--dark) 90% 100%
+  );
+  animation: background 3s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 0;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* -----------------dashboard username------------------ */
+.username{
+  color:rgb(15, 75, 7);
+  
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  height: 100px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
+
+
+
+
+
+
