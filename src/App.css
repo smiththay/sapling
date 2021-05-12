@@ -11,6 +11,10 @@
   border-bottom-left-radius: 300px;
 }
 
+.mainFont{
+  font-family: 'Righteous', cursive;
+}
+
 .navbar-brand{
   width: 46px;
   height: 40px;
@@ -19,15 +23,16 @@
   margin-left: -50px;
 }
 .hero-text{
+  font-family: 'Righteous', cursive;
   font-size: 80px;
   color: rgb(31, 68, 2);
-  position: absolute;
+  /* position: absolute;
   z-index: 999;
   margin: 0 auto;
   left: 0%;
-  top: 28%; /* Adjust this value to move the positioned div up and down */
+  top: 28%; 
   text-align: center;
-  width: 60%; /* Set the width of the positioned div */
+  width: 60%;  */
 }
 .hero-sub{
   font-size: 30px;
@@ -78,10 +83,7 @@
   display: block;
   width: 400px;
   margin: 0 auto 0 auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30vh;
+ 
 }
 
 .button {
@@ -90,7 +92,7 @@
   outline: none;
   border: none;
   background-color: var(--light);
-  width: 400px;
+  width: 470px;
   height: 70px;
   border-radius: 30px;
   font-size: 1.5rem;
@@ -131,7 +133,11 @@
   color:rgb(15, 75, 7);
   
 }
-
+.footer {
+  position: relative;
+  bottom: 0;
+  height: 100px;
+}
 
 
 

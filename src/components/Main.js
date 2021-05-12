@@ -6,20 +6,29 @@ import { Link } from 'react-router-dom';
 export default function main() {
     return (
         <div>
-            <div className ='bg-light'>
-            <section className="bgimage">
-                <div className="container">
-                    <div className="row ">
-                        <div className="hero-text col-xs-12 col-sm-6 col-md-8 ">
-                            <p> <i>Grow Your Money </i></p>
-                            <p className='hero-sub'><i>"<b>together</b> we can take
-                            our money <br />from saplings to well rooted trees"</i>
-                            </p>
-                            <div><p><Link to="/register" style={{ textDecoration: 'none' }} className="button"><h3 className='mt-3'><b>SIGN UP</b></h3></Link></p></div>
-                        </div>
+            <div className='bg-light'>
+                <section className="bgimage">
+                    <div className="container mt-5 pt-5">
+                        <div className="row mt-5 pt-5 ps-4">
+                            <div className="hero-text  mt-5 pt-4 ms-5 ps-5 col-xs-12 col-sm-6 col-md-8 ">
+                                <p className='mainFont'> <i>Grow Your Money </i></p>
+                            </div>
+                            </div>
+                            <div className="row me-5">
+                                <div className='col'>
+                                    <p className='hero-sub pb-5'><i>"<b>together</b> we can take
+                            our money from saplings to well rooted trees"</i>
+                                    </p>
+                                </div>
+                                <div className="row ms-3">
+                                    <div className='col-7 ps-3 ms-5'>
+                                        <div><p><Link to="/register" style={{ textDecoration: 'none' }} className="button"><h3 className='mt-5 pt-3 ps-5 pe-2 '><b>SIGN UP & START GROWING</b></h3></Link></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                       
                     </div>
-                </div>
-            </section>
+                </section>
             </div>
             {/* ------------------------------------------------------ */}
             <div className="container2">
@@ -83,7 +92,7 @@ export default function main() {
                                 <div className="card-body">
                                     <h3 className="card-title"><b>Succeed Selflessly</b></h3>
                                     <h5 className="card-text">Others will achieve their goals with our tools combined with your encouragement,
-                                   in vice versa.
+                                    in vice versa.
                                     </h5>
                                 </div>
                             </div>
@@ -118,10 +127,10 @@ export default function main() {
                                         </svg>
                                     </p>
                                     <p><h3 className='pt-4 mt-4'>"Through this app, I was able to save up and pay off coding bootcamp.
-                                    Easy to use goal setting tool with friends rooting for me made it 
+                                    Easy to use goal setting tool with friends rooting for me made it
                                     an achievable goal for me."
                                         </h3>
-                                        </p>
+                                    </p>
                                     <br />
 
                                     <h4><b><i>-Harris Green</i></b></h4>

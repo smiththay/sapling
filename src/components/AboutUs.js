@@ -37,7 +37,7 @@ export default function AboutUs() {
                         <h5 className='mt-5'>Smith grew up in a low-income neighborhood near Boston, MA to parents of refugees. Money was always tight but his parents always seemed to scrape by. It wasn't until he was a bit older that he realized that his parents were saving to buy their dream home and move their family to a more safe environment. Saving was a value that was instilled in him as he watched his parents work low paying jobs while saving to achieve their dreams.
                         <br />
                         <br />
-                        The pandemic revealed a big flaw in how people are unprepared for financial hardship. Over 60% of Americans live paycheck to paycheck. The topic of money is taboo which makes it difficult to learn how to properly save and budget. By creating an environment that encourages each other to save, we believe people will have better money habits. 
+                        The pandemic revealed a big flaw in how people are unprepared for financial hardship. Over 60% of Americans live paycheck to paycheck. The topic of money is taboo which makes it difficult to learn how to properly save and budget. By creating an environment that encourages each other to save, we believe people will have better money habits. Remember, all trees in a forest start off as saplings.
 
                         </h5>
                     </div>

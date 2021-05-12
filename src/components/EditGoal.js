@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Circle } from 'rc-progress'
 import { useGoals } from '../utilities/GoalContext'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -13,7 +12,7 @@ export default function EditGoal(props) {
     
     const currentGoal = myGoals.length > 0 ? myGoals.find(goal => goal.id === parseInt(id)) : {}
     //console.log(currentGoal)
-    const [percent, setPercent] = useState(100)
+
     const [goalData, setGoalData] = useState(currentGoal)
 
 

@@ -34,13 +34,13 @@ export const AuthHelper = () => {
         }
     }, [token])
 
-
-
     function saveUserData(res) {
         setUserData(res.data);
      
     }
-  
+    function alertPopup(error) {
+        alert('PLEASE DOUBLE CHECK YOUR EMAIL AND PASSWORD AND TRY AGAIN!')
+    }
 
     function saveToken(res) {
         let APItoken; // Initalize variable
@@ -67,7 +67,8 @@ export const AuthHelper = () => {
             data: registrationData,
             method: 'post',
             url: '/api/register',
-            successMethod: saveToken
+            successMethod: saveToken,
+            failureMethod: alertPopup
         })
     }
 
@@ -90,7 +91,8 @@ export const AuthHelper = () => {
             },
             method: 'post',
             url: '/oauth/token',
-            successMethod: saveToken
+            successMethod: saveToken,
+            failureMethod: alertPopup
           
         })
         
